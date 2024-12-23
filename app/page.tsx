@@ -6,10 +6,7 @@ import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import {
   School,
-  UserCircle,
   Activity,
-  Bell,
-  Menu,
   ChevronRight,
   Bot,
   Calendar,
@@ -20,6 +17,8 @@ import {
   X,
   TrendingUp,
 } from 'lucide-react';
+import { TopBar } from '../components/top-bar';
+
 
 // Common Widget component
 interface WidgetProps {
@@ -130,17 +129,8 @@ export default function Component() {
             style={{ opacity: `${fadePercentage / 100}` }}
           >
             {/* TOPBAR */}
-            <div className="w-full flex justify-between items-center text-white text-xl font-bold bg-orange-400 p-2 z-10">
-              {/* Left */}
-              <div className="flex items-center space-x-4">
-                <Menu className="h-5 w-5" />
-                <div>Hi Brotastic</div>
-              </div>
-              {/* Right */}
-              <div className="flex items-center space-x-4">
-                <Bell className="h-5 w-5" />
-                <UserCircle className="h-5 w-5" />
-              </div>
+            <div className="w-full">
+              <TopBar />
             </div>
 
             {/* BOX AVATAR */}
@@ -391,7 +381,7 @@ export default function Component() {
             {/* Courses Widget */}
             <Widget title="Courses" onClick={() => {}}>
               <div className="flex flex-col items-center mt-2">
-                <School className="w-8 h-8 text-orange-400 mb-2" />
+                <GraduationCap className="w-8 h-8 text-orange-400 mb-2" />
                 <span className="text-2xl font-bold">12</span>
                 <span className="text-sm text-gray-400">Completed</span>
               </div>
