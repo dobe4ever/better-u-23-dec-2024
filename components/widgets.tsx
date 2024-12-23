@@ -48,8 +48,8 @@ export function Widget({
     );
 }
 
-// UndelayWidget component
-export function UndelayWidget() {
+// UnderlayWidget component
+export function UnderlayWidget() {
   const [showWidget, setShowWidget] = useState(true)
 
   if (!showWidget) return null
@@ -169,8 +169,8 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
   )
 }
 
-// SuccessCoachWidget component
-export function SuccessCoachWidget() {
+// CheckinAIWidget component
+export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => void }) {
   return (
     <Widget title="AI Check-in" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
@@ -183,7 +183,7 @@ export function SuccessCoachWidget() {
 }
 
 // AnalyticsWidget component
-export function AnalyticsWidget() {
+export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => void }) {
   return (
     <Widget title="Analytics" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
@@ -211,7 +211,7 @@ export function AnalyticsWidget() {
 }
 
 // LifeScoreWidget component
-export function LifeScoreWidget() {
+export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => void }) {
   return (
     <Widget title="Life Score" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
@@ -224,7 +224,7 @@ export function LifeScoreWidget() {
 }
 
 // BadgesWidget component
-export function BadgesWidget() {
+export function BadgesWidget({ onBadgesClick }: { onBadgesClick: () => void }) {
   return (
     <Widget title="Badges" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
@@ -319,21 +319,24 @@ export function CoursesWidget() {
 interface WidgetsContainerProps {
   onHabitsClick: () => void
   onTodosClick: () => void
+  onCheckinAIClick: () => void
+  onAnalyticsClick: () => void
+  onLifeScoreClick: () => void
+  onBadgesClick: () => void
 }
 
-export function WidgetsContainer({ onHabitsClick, onTodosClick }: WidgetsContainerProps) {
+// <div className="flex flex-col overflow-hidden w-full bg-white p-2 gap-2 rounded-t-xl">
+export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick, onAnalyticsClick, onLifeScoreClick, onBadgesClick }: WidgetsContainerProps) {
   return (
-    // <div className="flex flex-col overflow-hidden w-full bg-white p-2 gap-2 rounded-t-xl">
-    <div className="flex flex-col shadow-md border-t bg-white rounded-t-2xl w-full gap-4 mt-4 p-4 overflow-auto">
-      {/* <AnnouncementWidget /> */}
-      <UndelayWidget />
+    <div className="flex flex-col shadow-md border-t bg-white rounded-t-2xl w-full gap-4 mt-4 p-4 overflow-auto"> 
+      <UnderlayWidget />
       <HabitsWidget onHabitsClick={onHabitsClick} />
       <TodosWidget onTodosClick={onTodosClick} />
       <div className="grid grid-cols-2 gap-4">
-        <div><SuccessCoachWidget /></div>
-        <div><AnalyticsWidget /></div>
-        <div><LifeScoreWidget /></div>
-        <div><BadgesWidget /></div>
+        <div><CheckinAIWidget onCheckinAIClick={onCheckinAIClick} /></div>
+        <div><AnalyticsWidget onAnalyticsClick={onAnalyticsClick} /></div>
+        <div><LifeScoreWidget onLifeScoreClick={onLifeScoreClick} /></div>
+        <div><BadgesWidget onBadgesClick={onBadgesClick} /></div>
       </div>
       <AdsCarouselWidget />
       <div className="grid grid-cols-2 gap-4">

@@ -8,7 +8,12 @@ import { Header } from '../components/header';
 import { Modal } from '../components/ui/modal';
 import { HabitsPage } from '../components/habits-page';
 import { TodosPage } from '../components/todos-page';
+import { CheckinAIPage } from '../components/checkin-ai-page';
+import { AnalyticsPage } from '../components/analytics-page';
+import { LifeScorePage } from '../components/life-score-page';
+import { BadgesPage } from '../components/badges-page';
 import { ChatbotPage } from '../components/chatbot-page';
+import { FloatingChatBtn } from '../components/floating-chat-btn';
 
 export default function HomePage() {
   const [fadePercentage, setFadePercentage] = useState(0)
@@ -49,7 +54,7 @@ export default function HomePage() {
         />
       </div>
 
-      <div className="sticky top-0 z-30">
+      <div className="sticky top-0 bg-white z-30">
         <StickyTopWidget />
       </div>
 
@@ -57,6 +62,10 @@ export default function HomePage() {
         <WidgetsContainer
           onHabitsClick={() => openModal('habits')}
           onTodosClick={() => openModal('todos')}
+          onCheckinAIClick={() => openModal('checkin')}
+          onAnalyticsClick={() => openModal('analytics')}
+          onLifeScoreClick={() => openModal('lifescore')}
+          onBadgesClick={() => openModal('badges')}
         />
       </div>
 
@@ -64,7 +73,11 @@ export default function HomePage() {
         <Modal onClose={closeModal}>
           {activeModal === 'habits' && <HabitsPage />}
           {activeModal === 'todos' && <TodosPage />}
-          {activeModal === 'chat' && <ChatbotPage />}
+          {activeModal === 'checkin' && <CheckinAIPage />}
+          {activeModal === 'analytics' && <AnalyticsPage />}
+          {activeModal === 'lifescore' && <LifeScorePage />}
+          {activeModal === 'badges' && <BadgesPage />}
+          {activeModal === 'chatbot' && <ChatbotPage />}
         </Modal>
       )}
     </div>
