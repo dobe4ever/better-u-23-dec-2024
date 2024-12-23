@@ -117,7 +117,7 @@ export function TopBar() {
     <div className="relative z-10">
 
       {/* #1: wrapper to align the left & right wrappers: */}
-      <div className="flex items-center justify-between px-4 py-2 bg-orange-400 shadow-">
+      <div className="flex items-center justify-between px-4 py-2 bg-transparent shadow-">
 
         {/* #2: Left wrapper: */}
         <div className="flex items-center space-x-4">
