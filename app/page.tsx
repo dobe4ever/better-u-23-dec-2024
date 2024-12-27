@@ -43,19 +43,30 @@ export default function HomePage() {
   }
 
   return (
-    <div className="relative min-h-screen min-w-screen bg-bg-orange">
+    <div className="relative min-h-screen min-w-screen bg-gradient-to-r from-orange-600 to-orange-500">
       <FloatingChatBtn onClick={() => openModal('chat')} />
 
       <div ref={headerRef} className="relative z-10">
         <Header />
         <div
-          className="absolute top-0 w-full h-[450px] bg-white pointer-events-none"
+          className="absolute top-0 w-full h-[650px] bg-white"
           style={{ opacity: fadePercentage / 100, zIndex: 20 }}
         />
       </div>
 
-      <div className="sticky top-0 bg-white z-30">
-        <StickyTopWidget />
+      <div className="sticky top-4 z-30">
+        <div className="
+          relative 
+          overflow-hidden 
+          m-4
+          p-4
+          bg-white 
+          rounded-2xl 
+          shadow-[0_8px_30px_rgb(0,0,0,0.12)]
+          before:absolute
+        ">
+          <StickyTopWidget />
+        </div>
       </div>
 
       <div className="relative z-20">

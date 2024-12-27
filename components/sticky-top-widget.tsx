@@ -1,5 +1,4 @@
 // components/sticky-top-widget.tsx
-
 'use client';
 
 import { useState } from 'react';
@@ -32,64 +31,74 @@ export function StickyTopWidget() {
   setTouchEnd(null);
   };
 
+  const messages = [
+    {
+      message: "Focus on completing your 'Morning Meditation' habit.",
+      source: "Based on decreased performance & consistency",
+    },
+    {
+      message: "15% increase in productivity observed",
+      source: "Compared to your previous week",
+    },
+    {
+      message: "You're building a strong routine",
+      source: "3 days streak! Keep it up!",
+    },
+  ];
+
   return (
-    <>
-      <div className="h-full px-4 w-1/4 flex flex-col items-center bg-white z-10">
-        <Bot size={20} className="text-orange-400 mb-1.5" />
-        <div className="flex gap-2">
-          {[0, 1, 2].map((index) => (
-            <button
-              key={index}
-              onClick={() => setActiveSlide(index)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                activeSlide === index
-                  ? 'bg-orange-400'
-                  : 'bg-gray-200'
-              }`}
-            />
-          ))}
+    <div className="w-full flex flex-col gap-4 mt-1 mb-0">
+      {/* Top container for Bot and Message */}
+      <div className="flex items-start gap-4">
+        {/* Bot icon container */}
+        <div className="flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+            <Bot size={24} className="text-orange-400" />
+          </div>
+        </div>
+
+        {/* Message carousel container */}
+        <div className="flex-grow overflow-hidden">
+          <div
+            className="flex transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+          >
+            {messages.map((item, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-full"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                <div className="border-l-4 pl-3 border-orange-400">
+                  <p className="font-semibold text-gray-900">
+                    {item.message}
+                  </p>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {item.source}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      
-      <div
-        className="h-full flex flex-col items-center flex-grow"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div
-          className="flex transition-transform duration-300 ease-out w-full"
-          style={{ transform: `translateX(-${activeSlide * 100}%)` }}
-        >
-          {[
-            {
-              message: "Focus on completing your 'Morning Meditation' habit.",
-              source: "Based on decreased performance & consistency",
-            },
-            {
-              message: "15% increase in productivity observed",
-              source: "Compared to your previous week",
-            },
-            {
-              message: "You're building a strong routine",
-              source: "3 days streak! Keep it up!",
-            },
-          ].map((item, index) => (
-            <div key={index} className="flex-shrink-0 w-full">
-              <blockquote className="border-l-4 pl-3 h-full border-orange-400 italic text-sm text-gray-400">
-                <p className="text-black font-bold">
-                  {item.message}
-                </p>
-                <p className="text-gray-500">
-                  {item.source}
-                </p>
-              </blockquote>
-            </div>
-            
-          ))}
-        </div>
+      {/* Navigation dots */}
+      <div className="flex justify-center gap-2">
+        {messages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveSlide(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              activeSlide === index
+                ? 'bg-orange-400 w-4' // Make active dot wider
+                : 'bg-gray-200'
+            }`}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 }

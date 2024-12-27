@@ -242,15 +242,15 @@ import { TopBar } from '../components/top-bar'
 // {/* Current date */}
 export function CurrentDate() {
   return (
-    <div className="-mt-[73%] w-full font-bold text-center text-3xl px-4 z-10">
+    <div className="-mt-[0%] w-full font-bold text-center text-3xl px-4 z-10">
         <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 10 }}
         transition={{ delay: 0.1, duration: 0.2 }}
         className="text-center"
         >
-        <h1 className="text-orange-main">
-            <span className="tracking-tighter font-bold text-title-orange">FRIDAY DECEMBER 6, 2024</span>
+        <h1 className=" ">
+            <span className="tracking-tighter font-bold text-orange-400">FRIDAY DECEMBER 6, 2024</span>
         </h1>
         </motion.div>
     </div>
@@ -260,33 +260,56 @@ export function CurrentDate() {
 // Diagonal lines BG
 export function ShapesBackground() {
     return (
-      <div className="relative -top-10 left-0 right-0 bottom- -z-10">
-        <div className="z-10">
-          <div className="absolute -top-10 left-0 h-[50vh] w-1/2 bg-white origin-top-left transform -skew-y-12"></div>
-          <div className="absolute -top-10 right-0 h-[50vh] w-1/2 bg-white origin-top-right transform skew-y-12"></div>
+      <div className="absolute top-[50%] right-0 left-0 bottom- aspect-[1/1]">
+        <div className="flex">
+          <div className="relative h-[50vh] w-[50%] bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 origin-top-left transform -skew-y-12"></div>
+          <div className="relative h-[50vh] w-[50%] bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 origin-top-right transform skew-y-12"></div>
         </div>
       </div>
     )
   }
 
+  // 🎯 Main Header Component
 export function Header() {
   return (
     <>
       <TopBar />
-      <div className="">
-
-        {/* Avatar */}
-        <div className="w-full flex justify-center z-10">
-            <img
-            className="overflow-hidden shadow-md border-4 border-orange-300 w-[75%] aspect-[1/1] rounded-full z-10"
-            src="https://i.pravatar.cc/300"
-            alt="User avatar"
-            />
+      <div className="flex relative w-full pb-[0%] items-center justify-center">
+        <div className="flex flex-col items-center justify-center w-full">
+          <ShapesBackground />
+          {/* Avatar */}
+          <div className="w-full flex justify-center z-10">
+              <img
+              className="overflow-hidden shadow-md border-4 border-orange-300 w-[75%] aspect-[1/1] rounded-full z-10"
+              src="https://i.pravatar.cc/300"
+              alt="User avatar"
+              />
+          </div>
+          <CurrentDate />
         </div>
-        
-        <ShapesBackground />
       </div>
-      <CurrentDate />
     </>
   )
 }
+
+// export function Header() {
+//   return (
+//     <>
+//       <TopBar />
+//       <div className="">
+
+//         {/* Avatar */}
+//         <div className="w-full flex justify-center z-10">
+//             <img
+//             className="overflow-hidden shadow-md border-4 border-orange-300 w-[75%] aspect-[1/1] rounded-full z-10"
+//             src="https://i.pravatar.cc/300"
+//             alt="User avatar"
+//             />
+//         </div>
+        
+//         <ShapesBackground />
+//       </div>
+//       <CurrentDate />
+//     </>
+//   )
+// }

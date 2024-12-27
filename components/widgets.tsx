@@ -136,7 +136,7 @@ export function HabitsWidget({ onHabitsClick }: { onHabitsClick: () => void }) {
           <p className="text-description-card">Completed</p>
           <p className="text-xl font-bold">8/10</p>
         </div>
-        <p className="text-big-percent-number">80%</p>
+        <p className="font-bold text-4xl">80%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
@@ -157,7 +157,7 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
           <p className="text-description-card">Completed</p>
           <p className="text-xl font-bold">3/12</p>
         </div>
-        <p className="text-big-percent-number">29%</p>
+        <p className="font-bold text-4xl">29%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
