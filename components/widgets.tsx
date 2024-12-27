@@ -258,7 +258,7 @@ export function ShopWidget() {
 export function CoursesWidget() {
   return (
     <Widget title="Courses" onClick={() => {}} className="flex flex-col gap-4 aspect-[1/1]">
-      <div className="grid grid-cols-3 gap-2 mt-2">
+      <div className="grid grid-cols-3 gap-2 mt-">
         {[1, 2, 3, 4, 5, 6].map((_, i) => (
           <div
             key={i}
@@ -296,8 +296,8 @@ export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick
       </div>
       <AdsCarouselWidget />
       <div className="flex grid-cols-2 gap-3">
-        <div><ShopWidget /></div>
-        <div><CoursesWidget /></div>
+        <ShopWidget />
+        <CoursesWidget />
       </div>
     </div>
   )
