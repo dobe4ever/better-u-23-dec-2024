@@ -157,7 +157,7 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
         <div className="text-description-card font-black">48%</div>
       </div>
 
-      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-2">
+      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-1.5">
         <div className="h-full w-1/2 bg-gray-900 rounded-full"></div>
       </div>
 
