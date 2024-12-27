@@ -55,7 +55,7 @@ export function UnderlayWidget() {
   if (!showWidget) return null
 
   return (
-    <div className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-10 shadow-none border-2 border-white max-w-[100%] mx-">
+    <div className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-8 shadow-none border-2 border-white max-w-[100%] mx-">
     {/* Left side: Description */}
     <div className="flex flex-col">
       <p className="text-xs -mt-6">
@@ -69,7 +69,7 @@ export function UnderlayWidget() {
           href="https://example.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-orange-400 font-semibold -mt-8"
+          className="text-xs -mt-6 text-orange-400 font-semibold"
         >
           Upgrade Now
         </a>
