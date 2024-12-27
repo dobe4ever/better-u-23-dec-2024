@@ -288,14 +288,14 @@ export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick
       <UnderlayWidget />
       <HabitsWidget onHabitsClick={onHabitsClick} />
       <TodosWidget onTodosClick={onTodosClick} />
-      <div className="grid grid-cols-2 gap-3 aspect-[1/1]">
-        <div className="aspect-[1/1]"><CheckinAIWidget onCheckinAIClick={onCheckinAIClick} /></div>
-        <div className="aspect-[1/1]"><AnalyticsWidget onAnalyticsClick={onAnalyticsClick} /></div>
-        <div className="aspect-[1/1]"><LifeScoreWidget onLifeScoreClick={onLifeScoreClick} /></div>
-        <div className="aspect-[1/1]"><BadgesWidget onBadgesClick={onBadgesClick} /></div>
+      <div className="flex grid grid-cols-2 gap-3">
+        <CheckinAIWidget onCheckinAIClick={onCheckinAIClick} />
+        <AnalyticsWidget onAnalyticsClick={onAnalyticsClick} />
+        <LifeScoreWidget onLifeScoreClick={onLifeScoreClick} />
+        <BadgesWidget onBadgesClick={onBadgesClick} />
       </div>
       <AdsCarouselWidget />
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex grid-cols-2 gap-3">
         <div><ShopWidget /></div>
         <div><CoursesWidget /></div>
       </div>
