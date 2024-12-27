@@ -60,7 +60,7 @@ export default function HomePage() {
           overflow-hidden
           rounded-2xl 
           shadow-[0_8px_30px_rgb(0,0,0,0.12)]
-          p-3 m-3 
+          p-4 m-4 
           bg-white
           border
           before:absolute
