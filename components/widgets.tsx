@@ -126,7 +126,7 @@ export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => 
     <Widget title="AI Check-in" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
       <Bot className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-2xl font-bold">24/7</span>
+      <span className="text-xl font-bold">24/7</span>
       <span className="text-description-card">24/7 AI guidance and support</span>
     </div>
   </Widget>
@@ -172,7 +172,7 @@ export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => 
     <Widget title="Life Score" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
       <LoaderPinwheel className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-2xl font-bold">Wheel</span>
+      <span className="text-xl font-bold">Wheel</span>
       <span className="text-description-card">Visualize progress across all life areas</span>
     </div>
   </Widget>
@@ -185,7 +185,7 @@ export function BadgesWidget({ onBadgesClick }: { onBadgesClick: () => void }) {
     <Widget title="Badges" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
       <Trophy className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-2xl font-bold">85 Total</span>
+      <span className="text-xl font-bold">85 Total</span>
       <span className="text-description-card">Earn rewards by hitting milestones</span>
     </div>
   </Widget>
