@@ -16,7 +16,7 @@ export function FloatingChatBtn({
   title = "Chatbot Page",
   children,
   onClick,
-  BotIcon = <Bot size={32} className="bg-white text-orange-500 border rounded-full shadow-xl p-1 pb-2" />,
+  BotIcon = <Bot size={42} className="bg-white text-orange-500 border rounded-full shadow-xl p-1 pb-2" />,
   className = '',
 }: FloatingChatBtnProps) {
   return (
