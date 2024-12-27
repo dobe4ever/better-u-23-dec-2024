@@ -242,7 +242,7 @@ import { TopBar } from '../components/top-bar'
 // {/* Current date */}
 export function CurrentDate() {
   return (
-    <div className="-mt-[0%] w-full font-black text-center text-2xl px-4 z-10">
+    <div className="-mt-[0%] w-full font-black text-center text-2xl text-orange-500 px-4 z-10">
         <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 10 }}
@@ -250,7 +250,7 @@ export function CurrentDate() {
         className="text-center"
         >
         <h1 className=" ">
-            <span className="tracking-tighter font-bold text-orange-400">FRIDAY DECEMBER 6, 2024</span>
+            <span className="tracking-tighter">FRIDAY DECEMBER 6, 2024</span>
         </h1>
         </motion.div>
     </div>
