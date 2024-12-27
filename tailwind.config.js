@@ -211,7 +211,7 @@ module.exports = {
           color: 'black',
         },
         '.text-description-card': {
-          // fontSize: '12px',
+          fontSize: '10px',
           // fontWeight: '300',
           // fontFamily: 'Poppins, sans-serif',
           textAlign: 'left',
