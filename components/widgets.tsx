@@ -44,100 +44,36 @@ export function UnderlayWidget() {
   if (!showWidget) return null
 
   return (
-    <div
-      className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-10 shadow-none border-2 border-white max-w-[100%] mx-"
-    >
+    <div className=" flex items-center justify-between bg-gray-100 p-2 pb-6 -mb-10 rounded-2xl shadow-none border-4 border-white max-w-[100%] mx-">
+      
       {/* Left side: Description */}
-      <div className="flex flex-col">
-        <p className="text-xs -mt-6">
-          50% off premium features, limited time
-        </p>
-        <p className="text-xs mt-2 mb-4 text-gray-100">
-          50% off premium features, limited time 
-        </p>
-      </div>
+      <p className="text-xs"> 50% off premium features, limited time </p>
+
       {/* Right side: Link and Close */}
-      <div className="flex flex-col">
-        <div className="flex items-center mb-2 space-x-1">
-          <a
-            href="https://example.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-orange-main font-semibold -mt-8"
-          >
-            Upgrade Now
-          </a>
-          <button
-            className="text-orange-main -mt-8"
-            onClick={(e) => {
-              e.stopPropagation() // Prevent parent handlers (if any)
-              setShowWidget(false)
-            }}
-          >
-            <X size={14} />
-          </button>
-        </div>
-        <div className="flex items-center mb-2 space-x-1">
-          <a
-            href="https://example.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-gray-100 font-semibold -mt-4"
-          >
-            Upgrade Now
-          </a>
-          <button
-            className="text-orange-main mb-"
-            onClick={(e) => {
-              e.stopPropagation() // Prevent parent handlers (if any)
-              setShowWidget(false)
-            }}
-          >
-            <X size={14} />
-          </button>
-        </div>
+      <div className="flex items-center space-x-1">
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-orange-main font-semibold"
+        >
+          Upgrade Now
+        </a>
+
+        <button
+          className="text-orange-main"
+          onClick={(e) => {
+            e.stopPropagation() // Prevent parent handlers (if any)
+            setShowWidget(false)
+          }}
+        >
+          <X size={14} />
+        </button>
+
       </div>
 
     </div>
-  )
-}
 
-// AnnouncementWidget component
-export function AnnouncementWidget() {
-  const [showAnnouncement, setShowAnnouncement] = useState(true)
-
-  if (!showAnnouncement) return null
-
-  return (
-    <Widget
-      className="relative overflow-hidden"
-      title="Premium Upgrade"
-      rightIcon={
-        <button
-          className="absolute top-4 right-4 text-orange-main"
-          onClick={(e) => {
-            e.stopPropagation()  // Prevents triggering any parent onClick handlers
-            setShowAnnouncement(false)
-          }}
-        >
-          <X size={16} />
-        </button>
-      }
-    >
-      <p className="text-description-card">
-        50% off premium features, limited time
-      </p>
-      <div className="my-2">
-        <a
-          href="https://vercel.com/dobe4evers-projects/vitejs-node-ts-tailwind-better-you"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="border border-orange-main text-orange-main px-2 py-1.5 rounded-full"
-        >
-          Claim Offer
-        </a>
-      </div>
-    </Widget>
   )
 }
 
