@@ -242,18 +242,16 @@ import { TopBar } from '../components/top-bar'
 // {/* Current date */}
 export function CurrentDate() {
   return (
-    <div className="-mt-[0%] w-full font-black text-center text-2xl text-orange-500 px-4 z-10">
-        <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 10 }}
-        transition={{ delay: 0.1, duration: 0.2 }}
-        className="text-center"
-        >
-        <h1 className=" ">
-            <span className="tracking-tighter">FRIDAY DECEMBER 6, 2024</span>
-        </h1>
-        </motion.div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 10 }}
+      transition={{ delay: 0.1, duration: 0.2 }}
+      className="text-center"
+    >
+      <h1 className="text-orange-main">
+        <span className="tracking-tighter font-bold text-title-orange">FRIDAY DECEMBER 6, 2024</span>
+      </h1>
+    </motion.div>
   )
 }
 
@@ -280,7 +278,7 @@ export function Header() {
           {/* Avatar */}
           <div className="w-full flex justify-center z-10">
               <img
-              className="overflow-hidden shadow-md border-4 border-orange-300 w-[75%] aspect-[1/1] rounded-full z-10"
+              className="overflow-hidden shadow-md border-4 border-orange-300 w-[65%] aspect-[1/1] rounded-full z-10"
               src="https://i.pravatar.cc/300"
               alt="User avatar"
               />
