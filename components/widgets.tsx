@@ -3,49 +3,38 @@
 
 import { useState } from 'react'
 import { ReactNode } from 'react'
-import {
-    Activity,
-    ChevronRight,
-    Bot,
-    Store,
-    GraduationCap,
-    LoaderPinwheel,
-    Trophy,
-    X,
-    ArrowLeft,
-    ArrowRight 
-  } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Activity, ChevronRight, Bot, Store, GraduationCap, LoaderPinwheel, Trophy, X, TrendingUp } from 'lucide-react'
+
+interface WidgetProps {
+  title: string
+  children: ReactNode
+  onClick?: () => void
+  rightIcon?: ReactNode
+  className?: string
+}
 
 // Common Widget component
-interface WidgetProps {
-    title: string;
-    children: ReactNode;
-    onClick?: () => void;
-    rightIcon?: ReactNode;
-    className?: string;
-  }
-
 export function Widget({
   title,
   children,
   onClick,
-  rightIcon = <ChevronRight size={16} className="text-orange-400" />,
+  rightIcon = <ChevronRight size={16} className="text-orange-main" />,
   className = '',
-  }: WidgetProps) {
+}: WidgetProps) {
   return (
     <div
       className={`bg-white rounded-2xl p-3 border shadow-md ${
-          onClick ? 'cursor-pointer' : ''
+        onClick ? 'cursor-pointer' : ''
       } group ${className}`}
       onClick={onClick}
-      >
-      <div className="flex justify-between items-center mb-0">
-          <h2 className="text-lg font-semibold">{title}</h2>
-          {rightIcon}
+    >
+      <div className="flex justify-between items-center mb-2">
+        <h2 className="text-title-card">{title}</h2>
+        {rightIcon}
       </div>
       {children}
     </div>
-  );
+  )
 }
 
 // UnderlayWidget component
@@ -55,38 +44,64 @@ export function UnderlayWidget() {
   if (!showWidget) return null
 
   return (
-    <div className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-8 shadow-none border-2 border-white max-w-[100%]">
-    {/* Left side: Description */}
-    <div className="flex flex-col">
-      <p className="text-xs -mt-6">
-        50% off premium features, limited time
-      </p>
-    </div>
-    {/* Right side: Link and Close */}
-    <div className="flex flex-col">
-      <div className="flex items-center mb-2 space-x-1">
-        <a
-          href="https://example.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs -mt-6 text-orange-400 font-semibold"
-        >
-          Upgrade Now
-        </a>
-        <button
-          className="text-orange-400 -mt-8"
-          onClick={(e) => {
-            e.stopPropagation(); // Prevent parent handlers (if any)
-            setShowWidget(false);
-          }}
-        >
-          <X size={14} />
-        </button>
+    <div
+      className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-10 shadow-none border-2 border-white max-w-[100%] mx-"
+    >
+      {/* Left side: Description */}
+      <div className="flex flex-col">
+        <p className="text-xs -mt-6">
+          50% off premium features, limited time
+        </p>
+        <p className="text-gray-100 text-xs mt-2 mb-4">
+          50% off premium features, limited time 
+        </p>
       </div>
+      {/* Right side: Link and Close */}
+      <div className="flex flex-col">
+        <div className="flex items-center mb-2 space-x-1">
+          <a
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-orange-main font-semibold -mt-8"
+          >
+            Upgrade Now
+          </a>
+          <button
+            className="text-orange-main -mt-8"
+            onClick={(e) => {
+              e.stopPropagation() // Prevent parent handlers (if any)
+              setShowWidget(false)
+            }}
+          >
+            <X size={14} />
+          </button>
+        </div>
+        <div className="flex items-center mb-2 space-x-1">
+          <a
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 text-xs text-orange-main font-semibold -mt-4"
+          >
+            Upgrade Now
+          </a>
+          <button
+            className="text-orange-main mb-"
+            onClick={(e) => {
+              e.stopPropagation() // Prevent parent handlers (if any)
+              setShowWidget(false)
+            }}
+          >
+            <X size={14} />
+          </button>
+        </div>
+      </div>
+
     </div>
-  </div>
-  );
+  )
 }
+
 
 // AnnouncementWidget component
 export function AnnouncementWidget() {
@@ -133,10 +148,10 @@ export function HabitsWidget({ onHabitsClick }: { onHabitsClick: () => void }) {
     <Widget title="Today's Habits" onClick={onHabitsClick} className="z-10">
       <div className="flex items-end justify-between mb-2">
         <div>
-          <p className="text-sm text-gray-500">Completed</p>
-          <p className="text-lg font-bold">8/10</p>
+          <p className="text-description-card">Completed</p>
+          <p className="text-xl font-bold">8/10</p>
         </div>
-        <p className="font-bold text-3xl">80%</p>
+        <p className="text-big-percent-number">80%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
@@ -154,10 +169,10 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
     <Widget title="Today's Todos" onClick={onTodosClick}>
       <div className="flex items-end justify-between mb-2">
         <div>
-          <p className="text-sm text-gray-500">Completed</p>
-          <p className="text-lg font-bold">3/12</p>
+          <p className="text-description-card">Completed</p>
+          <p className="text-xl font-bold">3/12</p>
         </div>
-        <p className="font-bold text-3xl">29%</p>
+        <p className="text-big-percent-number">29%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
@@ -169,6 +184,7 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
   )
 }
 
+
 // CheckinAIWidget component
 export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => void }) {
   return (
@@ -176,7 +192,7 @@ export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => 
     <div className="flex flex-col items-center mt-2">
       <Bot className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">24/7</span>
-      <span className="text-sm text-gray-500">Success coach guidance and support</span>
+      <span className="text-description-card">24/7 AI guidance and support</span>
     </div>
   </Widget>
   )
@@ -193,8 +209,8 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
     <div>
 
       <div className="flex items-center justify-between">
-        <div className="text-sm text-gray-500">Last 7 days</div>
-        <div className="text-lg font-bold">80%</div>
+        <div className="text-description-card">Last 7 days</div>
+        <div className="text-description-card font-black">80%</div>
       </div>
 
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-2">
@@ -202,8 +218,8 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
       </div>
 
       <div className="flex justify-between">
-        <div className="text-sm text-gray-500">Last 30 days</div>
-        <div className="text-lg font-bold">48%</div>
+        <div className="text-description-card">Last 30 days</div>
+        <div className="text-description-card font-black">48%</div>
       </div>
 
       <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-2">
@@ -222,7 +238,7 @@ export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => 
     <div className="flex flex-col items-center mt-2">
       <LoaderPinwheel className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">Wheel</span>
-      <span className="text-sm text-gray-500">Visualize progress across all life areas</span>
+      <span className="text-description-card">Visualize progress across all life areas</span>
     </div>
   </Widget>
   )
@@ -235,7 +251,7 @@ export function BadgesWidget({ onBadgesClick }: { onBadgesClick: () => void }) {
     <div className="flex flex-col items-center mt-2">
       <Trophy className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">85 Total</span>
-      <span className="text-sm text-gray-500">Earn rewards by hitting milestones</span>
+      <span className="text-description-card">Earn rewards by hitting milestones</span>
     </div>
   </Widget>
   )
@@ -280,7 +296,7 @@ export function AdsCarouselWidget() {
                 <div key={index} className="w-full flex-shrink-0">
                 <div className="bg-orange-50 p-4 rounded-lg">
                     <h3 className="font-semibold">{ad.title}</h3>
-                    <p className="text-sm text-gray-600">{ad.description}</p>
+                    <p className="text-description-card">{ad.description}</p>
                 </div>
                 </div>
             ))}
@@ -297,7 +313,7 @@ export function ShopWidget() {
         <div className="flex flex-col items-center mt-2">
         <Store className="w-8 h-8 text-orange-400 mb-2" />
         <span className="text-2xl font-bold">98 Items</span>
-        <span className="text-sm text-gray-500">Explore products and services all in one place</span>
+        <span className="text-description-card">Explore products and services all in one place</span>
         </div>
     </Widget>
   )
@@ -306,21 +322,19 @@ export function ShopWidget() {
 // CoursesWidget component
 export function CoursesWidget() {
   return (
-    <Widget title="Shop" onClick={() => {}} className="flex flex-col gap-2">
-        <div className="flex flex-col items-center mt-2">
-        <GraduationCap className="w-8 h-8 text-orange-400 mb-" />
+    <Widget title="Courses" onClick={() => {}} className="flex flex-col gap-2">
+      <div className="grid grid-cols-3 gap-2 mt-2">
+        {[1, 2, 3, 4, 5, 6].map((_, i) => (
+          <div
+            key={i}
+            className="aspect-square w-9 rounded-lg bg-orange-50 flex items-center justify-center"
+          >
+            <GraduationCap className="w-6 h-6 text-orange-400" />
+          </div>
+        ))}
       </div>
-    <div className="grid grid-cols-3 gap-2 mt-2">
-      {[1, 2, 3, 4, 5, 6].map((_, i) => (
-        <div
-          key={i}
-          className="aspect-square rounded-lg bg-orange-50 flex items-center justify-center"
-        >
-          <GraduationCap className="w-6 h-6 text-orange-400" />
-        </div>
-      ))}
-    </div>
-  </Widget>
+      <span className="text-description-card">Curated learning paths to track your journey</span>
+    </Widget>
   )
 }
 
