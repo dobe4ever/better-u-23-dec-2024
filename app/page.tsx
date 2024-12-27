@@ -58,8 +58,8 @@ export default function HomePage() {
         <div className="
           relative 
           overflow-hidden
-          rounded-b-2xl 
-          shadow-lg
+          border-orange-main
+          shadow-
           p-2 m-2.5 mb-0 mt-6
           bg-white
           border-b
