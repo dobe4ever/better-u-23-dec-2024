@@ -26,26 +26,26 @@ interface WidgetProps {
   }
 
 export function Widget({
-    title,
-    children,
-    onClick,
-    rightIcon = <ChevronRight size={16} className="text-orange-400" />,
-    className = '',
-    }: WidgetProps) {
-    return (
-        <div
-        className={`bg-white rounded-2xl p-3 border shadow-md ${
-            onClick ? 'cursor-pointer' : ''
-        } group ${className}`}
-        onClick={onClick}
-        >
-        <div className="flex justify-between items-center mb-0">
-            <h2 className="text-lg font-semibold">{title}</h2>
-            {rightIcon}
-        </div>
-        {children}
-        </div>
-    );
+  title,
+  children,
+  onClick,
+  rightIcon = <ChevronRight size={16} className="text-orange-400" />,
+  className = '',
+  }: WidgetProps) {
+  return (
+    <div
+      className={`bg-white rounded-2xl p-3 border shadow-md ${
+          onClick ? 'cursor-pointer' : ''
+      } group ${className}`}
+      onClick={onClick}
+      >
+      <div className="flex justify-between items-center mb-0">
+          <h2 className="text-lg font-semibold">{title}</h2>
+          {rightIcon}
+      </div>
+      {children}
+    </div>
+  );
 }
 
 // UnderlayWidget component
@@ -55,7 +55,7 @@ export function UnderlayWidget() {
   if (!showWidget) return null
 
   return (
-    <div className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-8 shadow-none border-2 border-white max-w-[100%] mx-">
+    <div className="relative flex items-center justify-between bg-gray-100 rounded-2xl pt-8 pl-2 pr-2 -mb-8 shadow-none border-2 border-white max-w-[100%]">
     {/* Left side: Description */}
     <div className="flex flex-col">
       <p className="text-xs -mt-6">
@@ -133,10 +133,10 @@ export function HabitsWidget({ onHabitsClick }: { onHabitsClick: () => void }) {
     <Widget title="Today's Habits" onClick={onHabitsClick} className="z-10">
       <div className="flex items-end justify-between mb-2">
         <div>
-          <p className="text-description-card">Completed</p>
-          <p className="text-xl font-bold">8/10</p>
+          <p className="text-sm text-gray-500">Completed</p>
+          <p className="text-lg font-bold">8/10</p>
         </div>
-        <p className="font-bold text-4xl">80%</p>
+        <p className="font-bold text-3xl">80%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
@@ -154,10 +154,10 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
     <Widget title="Today's Todos" onClick={onTodosClick}>
       <div className="flex items-end justify-between mb-2">
         <div>
-          <p className="text-description-card">Completed</p>
-          <p className="text-xl font-bold">3/12</p>
+          <p className="text-sm text-gray-500">Completed</p>
+          <p className="text-lg font-bold">3/12</p>
         </div>
-        <p className="font-bold text-4xl">29%</p>
+        <p className="font-bold text-3xl">29%</p>
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
         <div
@@ -176,7 +176,7 @@ export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => 
     <div className="flex flex-col items-center mt-2">
       <Bot className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">24/7</span>
-      <span className="text-sm text-gray-400">Success coach guidance and support</span>
+      <span className="text-sm text-gray-500">Success coach guidance and support</span>
     </div>
   </Widget>
   )
@@ -188,23 +188,28 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
     <Widget title="Analytics" onClick={() => {}} className="flex flex-col gap-2">
     <div className="flex flex-col items-center mt-2">
       <Activity className="w-8 h-8 text-orange-400 mb-2" />
-      <div className="space-y-1">
-        
-      <div className="flex justify-between">
-        <div className="text-description-card">Last 7 days</div>
-        <div className="text-orange-main font-bold">80%</div>
+    </div>
+
+    <div>
+
+      <div className="flex items-center justify-between">
+        <div className="text-sm text-gray-500">Last 7 days</div>
+        <div className="text-lg font-bold">80%</div>
       </div>
-      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+
+      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-2">
         <div className="h-full w-3/4 bg-gradient-orange rounded-full"></div>
       </div>
+
       <div className="flex justify-between">
-        <div className="text-description-card">Last 30 days</div>
-        <div className="text-gray-900 font-bold">48%</div>
+        <div className="text-sm text-gray-500">Last 30 days</div>
+        <div className="text-lg font-bold">48%</div>
       </div>
-      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+
+      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-2">
         <div className="h-full w-1/2 bg-gray-900 rounded-full"></div>
       </div>
-    </div>
+
     </div>
   </Widget>
   )
@@ -217,7 +222,7 @@ export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => 
     <div className="flex flex-col items-center mt-2">
       <LoaderPinwheel className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">Wheel</span>
-      <span className="text-sm text-gray-400">Visualize progress across all life areas</span>
+      <span className="text-sm text-gray-500">Visualize progress across all life areas</span>
     </div>
   </Widget>
   )
@@ -230,7 +235,7 @@ export function BadgesWidget({ onBadgesClick }: { onBadgesClick: () => void }) {
     <div className="flex flex-col items-center mt-2">
       <Trophy className="w-8 h-8 text-orange-400 mb-2" />
       <span className="text-2xl font-bold">85 Total</span>
-      <span className="text-sm text-gray-400">Earn rewards by hitting milestones</span>
+      <span className="text-sm text-gray-500">Earn rewards by hitting milestones</span>
     </div>
   </Widget>
   )
@@ -292,7 +297,7 @@ export function ShopWidget() {
         <div className="flex flex-col items-center mt-2">
         <Store className="w-8 h-8 text-orange-400 mb-2" />
         <span className="text-2xl font-bold">98 Items</span>
-        <span className="text-sm text-gray-400">Explore products and services all in one place</span>
+        <span className="text-sm text-gray-500">Explore products and services all in one place</span>
         </div>
     </Widget>
   )
@@ -301,7 +306,10 @@ export function ShopWidget() {
 // CoursesWidget component
 export function CoursesWidget() {
   return (
-    <Widget title="Courses">
+    <Widget title="Shop" onClick={() => {}} className="flex flex-col gap-2">
+        <div className="flex flex-col items-center mt-2">
+        <GraduationCap className="w-8 h-8 text-orange-400 mb-" />
+      </div>
     <div className="grid grid-cols-3 gap-2 mt-2">
       {[1, 2, 3, 4, 5, 6].map((_, i) => (
         <div
@@ -325,7 +333,6 @@ interface WidgetsContainerProps {
   onBadgesClick: () => void
 }
 
-// <div className="flex flex-col overflow-hidden w-full bg-white p-2 gap-2 rounded-t-xl">
 export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick, onAnalyticsClick, onLifeScoreClick, onBadgesClick }: WidgetsContainerProps) {
   return (
     <div className="flex flex-col shadow-md border-t bg-white rounded-t-2xl w-full gap-4 mt-4 p-4 overflow-auto"> 

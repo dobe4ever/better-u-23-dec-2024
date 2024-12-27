@@ -46,8 +46,23 @@ export function StickyTopWidget() {
     },
   ];
 
+  // return (
+  //   <div
+  //     className={`bg-white rounded-2xl p-3 border shadow-md ${
+  //         onClick ? 'cursor-pointer' : ''
+  //     } group ${className}`}
+  //     onClick={onClick}
+  //     >
+  //     <div className="flex justify-between items-center mb-0">
+  //         <h2 className="text-lg font-semibold">{title}</h2>
+  //         {rightIcon}
+  //     </div>
+  //     {children}
+  //   </div>
+  // )
+
   return (
-    <div className="w-full flex flex-col gap-4 mt-1 mb-0">
+    <div>
       {/* Top container for Bot and Message */}
       <div className="flex items-start gap-4">
         {/* Bot icon container */}
