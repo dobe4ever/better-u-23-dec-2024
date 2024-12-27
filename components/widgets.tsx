@@ -44,7 +44,7 @@ export function UnderlayWidget() {
   if (!showWidget) return null
 
   return (
-    <div className=" flex items-center justify-between bg-gray-100 p-2 pb-6 -mb-10 rounded-2xl shadow-none border-4 border-white max-w-[100%] mx-">
+    <div className=" flex items-center justify-between bg-gray-100 p-2 pb-6 -mb-8 rounded-2xl shadow-none border-4 border-white max-w-[100%] mx-">
       
       {/* Left side: Description */}
       <p className="text-xs"> 50% off premium features, limited time </p>
