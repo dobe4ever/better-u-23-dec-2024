@@ -260,8 +260,8 @@ export function ShapesBackground() {
     return (
       <div className="absolute top-[50%] right-0 left-0 bottom-0">
         <div className="flex">
-          <div className="relative h-[100vh] w-[50%] bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 origin-top-left transform -skew-y-12"></div>
-          <div className="relative h-[100vh] w-[50%] bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 origin-top-right transform skew-y-12"></div>
+          <div className="relative h-[100vh] w-[50%] bg-white origin-top-left transform -skew-y-12"></div>
+          <div className="relative h-[100vh] w-[50%] bg-white origin-top-right transform skew-y-12"></div>
         </div>
       </div>
     )

@@ -335,7 +335,7 @@ interface WidgetsContainerProps {
 
 export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick, onAnalyticsClick, onLifeScoreClick, onBadgesClick }: WidgetsContainerProps) {
   return (
-    <div className="flex flex-col shadow-md border-t bg-white rounded-t-2xl w-full gap-4 mt-4 p-4 overflow-auto"> 
+    <div className="flex flex-col shadow-md bg-white w-full gap-4 mt-4 p-4 overflow-auto"> 
       <UnderlayWidget />
       <HabitsWidget onHabitsClick={onHabitsClick} />
       <TodosWidget onTodosClick={onTodosClick} />
