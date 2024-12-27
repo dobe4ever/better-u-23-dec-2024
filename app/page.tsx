@@ -43,7 +43,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="relative min-h-screen min-w-screen bg-gradient-to-r from-orange-600 to-orange-500">
+    <div className="relative min-h-screen min-w-screen bg-bg-orange">
       <FloatingChatBtn onClick={() => openModal('chat')} />
 
       <div ref={headerRef} className="relative z-10">
