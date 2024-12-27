@@ -284,18 +284,18 @@ interface WidgetsContainerProps {
 
 export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick, onAnalyticsClick, onLifeScoreClick, onBadgesClick }: WidgetsContainerProps) {
   return (
-    <div className="flex flex-col shadow-md bg-white w-full gap-4 mt-4 p-4 overflow-auto"> 
+    <div className="flex flex-col shadow-md bg-white w-full gap-3 mt- p-4 overflow-auto"> 
       <UnderlayWidget />
       <HabitsWidget onHabitsClick={onHabitsClick} />
       <TodosWidget onTodosClick={onTodosClick} />
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <div><CheckinAIWidget onCheckinAIClick={onCheckinAIClick} /></div>
         <div><AnalyticsWidget onAnalyticsClick={onAnalyticsClick} /></div>
         <div><LifeScoreWidget onLifeScoreClick={onLifeScoreClick} /></div>
         <div><BadgesWidget onBadgesClick={onBadgesClick} /></div>
       </div>
       <AdsCarouselWidget />
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         <div><ShopWidget /></div>
         <div><CoursesWidget /></div>
       </div>

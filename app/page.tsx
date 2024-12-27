@@ -54,13 +54,13 @@ export default function HomePage() {
         />
       </div>
 
-      <div className="sticky top-4 z-30">
+      <div className="sticky top-2 z-30">
         <div className="
           relative 
           overflow-hidden
           rounded-2xl 
-          shadow-[0_8px_30px_rgb(0,0,0,0.12)]
-          p-4 m-4 
+          shadow-lg
+          p-2 m-4 mb-0 mt-6
           bg-white
           border
           before:absolute
