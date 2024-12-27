@@ -108,28 +108,46 @@ export function UserProfileMenu() {
 }
 
 
+// export function TopBar() {
+//   return (
+//     // horizontal bar main box
+//     <div className="relative z-10">
+
+//       {/* #1: wrapper to align the left & right wrappers: */}
+//       <div className="flex items-center justify-between px-4 py-2 bg-transparent shadow-">
+
+//         {/* #2: Left wrapper: */}
+//         <div className="flex items-center space-x-4">
+//             <HamburgerMenu />
+//             <LogoWhite />
+//         </div>
+
+//         {/* #3: Right wrapper: */}
+//         <div className="flex items-center space-x-4">
+//             <NotificationsMenu />
+//             <UserProfileMenu />
+//         </div>
+
+//       </div>
+
+//     </div>
+//   )
+// }
+
 export function TopBar() {
   return (
-    // horizontal bar main box
-    <div className="relative z-10">
+    <div className="relative pl-1 p-2 pr-2 z-10">
 
-      {/* #1: wrapper to align the left & right wrappers: */}
-      <div className="flex items-center justify-between px-4 py-2 bg-transparent shadow-">
-
-        {/* #2: Left wrapper: */}
-        <div className="flex items-center space-x-4">
-            <HamburgerMenu />
-            <LogoWhite />
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-4">
+          <HamburgerMenu />
+          <LogoWhite />
         </div>
-
-        {/* #3: Right wrapper: */}
-        <div className="flex items-center space-x-4">
-            <NotificationsMenu />
-            <UserProfileMenu />
+        <div className="flex items-center gap-3">
+          <NotificationsMenu />
+          <UserProfileMenu />
         </div>
-
       </div>
-
     </div>
   )
 }
