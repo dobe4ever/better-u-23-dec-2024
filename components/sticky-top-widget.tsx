@@ -23,9 +23,7 @@ export function StickyTopWidget() {
   const currentTip = tips[1]
 
   return (
-    <div className="bg-white border-orange-main">
-
-      <div className="flex items-center">
+    <div className="flex items-center">
 
         <div className="flex-shrink-0 h-12">
         <Bot size={46} className="text-orange-main pr-2" />
@@ -37,7 +35,5 @@ export function StickyTopWidget() {
         </blockquote>
 
       </div>
-
-    </div>
   )
 }

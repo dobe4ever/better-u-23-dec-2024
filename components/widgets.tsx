@@ -138,7 +138,7 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
   return (
     <Widget title="Analytics" onClick={() => {}} className="flex flex-col gap-4 aspect-[1/1]">
     <div className="flex flex-col items-center">
-      <Activity className="w-8 h-8 text-orange-400 mt-2 mb-2" />
+      <Activity className="w-8 h-8 text-orange-400 mt-2" />
     </div>
 
     <div>

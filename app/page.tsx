@@ -59,7 +59,7 @@ export default function HomePage() {
           relative 
           overflow-hidden
           border-orange-main
-          shadow-
+          rounded-b-2xl
           p-2 m-2.5 mb-0 mt-6
           bg-white
           border-b
