@@ -3,7 +3,7 @@
 
 import { useState } from 'react'
 import { ReactNode } from 'react'
-import { ArrowRight, ArrowLeft, Activity, ChevronRight, Bot, Store, GraduationCap, LoaderPinwheel, Trophy, X, TrendingUp } from 'lucide-react'
+import { ChevronRight, ChevronLeft, Activity, Bot, Store, GraduationCap, LoaderPinwheel, Trophy, X, TrendingUp } from 'lucide-react'
 
 interface WidgetProps {
   title: string
@@ -52,7 +52,7 @@ export function UnderlayWidget() {
         <p className="text-xs -mt-6">
           50% off premium features, limited time
         </p>
-        <p className="text-gray-100 text-xs mt-2 mb-4">
+        <p className="text-xs mt-2 mb-4 text-gray-100">
           50% off premium features, limited time 
         </p>
       </div>
@@ -82,7 +82,7 @@ export function UnderlayWidget() {
             href="https://example.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-100 text-xs text-orange-main font-semibold -mt-4"
+            className="text-xs text-orange-main font-semibold -mt-4 text-gray-100"
           >
             Upgrade Now
           </a>
@@ -101,7 +101,6 @@ export function UnderlayWidget() {
     </div>
   )
 }
-
 
 // AnnouncementWidget component
 export function AnnouncementWidget() {
@@ -276,13 +275,13 @@ export function AdsCarouselWidget() {
                 onClick={() => setAdIndex((prev) => (prev > 0 ? prev - 1 : ads.length - 1))}
                 className="p-1 hover:bg-gray-100 rounded-full"
             >
-                <ArrowLeft size={16} className="text-orange-400" />
+                <ChevronLeft size={16} className="text-orange-400" />
             </button>
             <button
                 onClick={() => setAdIndex((prev) => (prev < ads.length - 1 ? prev + 1 : 0))}
                 className="p-1 hover:bg-gray-100 rounded-full"
             >
-                <ArrowRight size={16} className="text-orange-400" />
+                <ChevronRight size={16} className="text-orange-400" />
             </button>
             </div>
         }

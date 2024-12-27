@@ -1,5 +1,4 @@
 // components/sticky-top-widget.tsx
-// components/layout/sticky-top.tsx
 'use client'
 
 import { Bot } from 'lucide-react'
