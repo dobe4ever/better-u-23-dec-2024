@@ -278,7 +278,7 @@ export function Header() {
           {/* Avatar */}
           <div className="w-full flex justify-center z-10">
               <img
-              className="overflow-hidden shadow-md border-4 border-orange-300 w-[50%] aspect-[1/1] rounded-full z-10"
+              className="overflow-hidden shadow-md border-4 border-orange-300 w-[35%] aspect-[1/1] rounded-full z-10"
               src="https://i.pravatar.cc/300"
               alt="User avatar"
               />

@@ -28,7 +28,7 @@ export function Widget({
       } group ${className}`}
       onClick={onClick}
     >
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center mb-3">
         <h2 className="text-title-card">{title}</h2>
         {rightIcon}
       </div>
