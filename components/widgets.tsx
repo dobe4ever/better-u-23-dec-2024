@@ -123,10 +123,10 @@ export function TodosWidget({ onTodosClick }: { onTodosClick: () => void }) {
 // CheckinAIWidget component
 export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => void }) {
   return (
-    <Widget title="AI Check-in" onClick={() => {}} className="flex flex-col gap-2">
-    <div className="flex flex-col items-center mt-2">
+    <Widget title="AI Check-in" onClick={() => {}} className="relative aspect-[1/1]">
+    <div className="flex flex-col items-center">
       <Bot className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-xl font-bold">24/7</span>
+      <span className="text-xl font-bold mb-2">24/7</span>
       <span className="text-description-card">24/7 AI guidance and support</span>
     </div>
   </Widget>
@@ -136,9 +136,9 @@ export function CheckinAIWidget({ onCheckinAIClick }: { onCheckinAIClick: () => 
 // AnalyticsWidget component
 export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => void }) {
   return (
-    <Widget title="Analytics" onClick={() => {}} className="flex flex-col gap-2">
-    <div className="flex flex-col items-center mt-2">
-      <Activity className="w-8 h-8 text-orange-400 mb-2" />
+    <Widget title="Analytics" onClick={() => {}} className="flex flex-col gap-2 aspect-[1/1]">
+    <div className="flex flex-col items-center">
+      <Activity className="w-8 h-8 text-orange-400 mb-1.5" />
     </div>
 
     <div>
@@ -169,10 +169,10 @@ export function AnalyticsWidget({ onAnalyticsClick }: { onAnalyticsClick: () => 
 // LifeScoreWidget component
 export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => void }) {
   return (
-    <Widget title="Life Score" onClick={() => {}} className="flex flex-col gap-2">
-    <div className="flex flex-col items-center mt-2">
+    <Widget title="Life Score" onClick={() => {}} className="flex flex-col gap-2 aspect-[1/1]">
+    <div className="flex flex-col items-center">
       <LoaderPinwheel className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-xl font-bold">Wheel</span>
+      <span className="text-xl font-bold mb-2">Wheel</span>
       <span className="text-description-card">Visualize progress across all life areas</span>
     </div>
   </Widget>
@@ -182,10 +182,10 @@ export function LifeScoreWidget({ onLifeScoreClick }: { onLifeScoreClick: () => 
 // BadgesWidget component
 export function BadgesWidget({ onBadgesClick }: { onBadgesClick: () => void }) {
   return (
-    <Widget title="Badges" onClick={() => {}} className="flex flex-col gap-2">
-    <div className="flex flex-col items-center mt-2">
+    <Widget title="Badges" onClick={() => {}} className="flex flex-col gap-2 aspect-[1/1]">
+    <div className="flex flex-col items-center">
       <Trophy className="w-8 h-8 text-orange-400 mb-2" />
-      <span className="text-xl font-bold">85 Total</span>
+      <span className="text-xl font-bold mb-2">85 Total</span>
       <span className="text-description-card">Earn rewards by hitting milestones</span>
     </div>
   </Widget>
@@ -244,10 +244,10 @@ export function AdsCarouselWidget() {
 // ShopWidget component
 export function ShopWidget() {
   return (
-    <Widget title="Shop" onClick={() => {}} className="flex flex-col gap-2">
-        <div className="flex flex-col items-center mt-2">
+    <Widget title="Shop" onClick={() => {}} className="flex flex-col gap-2 aspect-[1/1]">
+        <div className="flex flex-col items-center">
         <Store className="w-8 h-8 text-orange-400 mb-2" />
-        <span className="text-2xl font-bold">98 Items</span>
+        <span className="text-2xl font-bold mb-2">98 Items</span>
         <span className="text-description-card">Explore products and services all in one place</span>
         </div>
     </Widget>
@@ -257,8 +257,8 @@ export function ShopWidget() {
 // CoursesWidget component
 export function CoursesWidget() {
   return (
-    <Widget title="Courses" onClick={() => {}} className="flex flex-col gap-2">
-      <div className="grid grid-cols-3 gap-2 mt-2">
+    <Widget title="Courses" onClick={() => {}} className="flex flex-col gap-2 aspect-[1/1]">
+      <div className="grid grid-cols-3 gap-2 mb-2">
         {[1, 2, 3, 4, 5, 6].map((_, i) => (
           <div
             key={i}
@@ -284,15 +284,15 @@ interface WidgetsContainerProps {
 
 export function WidgetsContainer({ onHabitsClick, onTodosClick, onCheckinAIClick, onAnalyticsClick, onLifeScoreClick, onBadgesClick }: WidgetsContainerProps) {
   return (
-    <div className="flex flex-col shadow-md bg-white w-full gap-3 mt- p-4 overflow-auto"> 
+    <div className="flex flex-col shadow-md bg-white w-full gap-3 mt- p-3 overflow-auto"> 
       <UnderlayWidget />
       <HabitsWidget onHabitsClick={onHabitsClick} />
       <TodosWidget onTodosClick={onTodosClick} />
-      <div className="grid grid-cols-2 gap-3">
-        <div><CheckinAIWidget onCheckinAIClick={onCheckinAIClick} /></div>
-        <div><AnalyticsWidget onAnalyticsClick={onAnalyticsClick} /></div>
-        <div><LifeScoreWidget onLifeScoreClick={onLifeScoreClick} /></div>
-        <div><BadgesWidget onBadgesClick={onBadgesClick} /></div>
+      <div className="grid grid-cols-2 gap-3 aspect-[1/1]">
+        <div className="aspect-[1/1]"><CheckinAIWidget onCheckinAIClick={onCheckinAIClick} /></div>
+        <div className="aspect-[1/1]"><AnalyticsWidget onAnalyticsClick={onAnalyticsClick} /></div>
+        <div className="aspect-[1/1]"><LifeScoreWidget onLifeScoreClick={onLifeScoreClick} /></div>
+        <div className="aspect-[1/1]"><BadgesWidget onBadgesClick={onBadgesClick} /></div>
       </div>
       <AdsCarouselWidget />
       <div className="grid grid-cols-2 gap-3">

@@ -54,15 +54,15 @@ export default function HomePage() {
         />
       </div>
 
-      <div className="sticky top-2 z-30">
+      <div className="sticky top-0 z-30">
         <div className="
           relative 
           overflow-hidden
-          rounded-2xl 
+          rounded-b-2xl 
           shadow-lg
-          p-2 m-4 mb-0 mt-6
+          p-2 m-2.5 mb-0 mt-6
           bg-white
-          border
+          border-b
           before:absolute
         ">
           <StickyTopWidget />
