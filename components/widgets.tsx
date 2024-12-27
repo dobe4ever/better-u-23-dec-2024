@@ -82,7 +82,7 @@ export function UnderlayWidget() {
             href="https://example.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-orange-main font-semibold -mt-4 text-gray-100"
+            className="text-xs text-gray-100 font-semibold -mt-4"
           >
             Upgrade Now
           </a>
